@@ -3,8 +3,6 @@ package com.tanuj.crypto;
 import java.util.Arrays;
 import java.util.Map;
 
-import javax.ws.rs.GET;
-
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -24,7 +22,6 @@ public class ConciergeController {
     private String message = "Hello World";
 
     @RequestMapping("/")
-    @GET
     public String welcome(Map<String, Object> model) {
         model.put("message", this.message);
         // final String uri = "https://cex.io/api/tickers/USD/EUR/RUB/BTC";
