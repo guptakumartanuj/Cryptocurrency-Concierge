@@ -50,7 +50,6 @@ public class ConciergeController {
         headers.add("user-agent",
             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36");
         HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
-        String url = "https://jsonplaceholder.typicode.com/posts/1";
         ResponseEntity<String> res = rt.exchange(cexUri, HttpMethod.GET, entity, String.class);
         System.out.println(res.getBody());
 
@@ -80,7 +79,7 @@ public class ConciergeController {
             message = "Profit :: " + Double.toString(finalKoinexEthr - finalCexEthr);
         } else {
             System.out.println("Profit is " + (finalCexEthr - finalKoinexEthr));
-            message = "Loss :: " + Double.toString(-(finalCexEthr - finalKoinexEthr));
+            message = "Loss :: " + Double.toString((finalCexEthr - finalKoinexEthr));
         }
 
         model.put("message", this.message);
